@@ -5,8 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Horusec Scan
     steps:
+      - uses: actions/checkout@v1
       - name: Run Horusec
         id: run_horusec
-        run: |
-                curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/master/deployments/scripts/install.sh | bash -s latest
-                horusec start -p ./
+        uses: fike/horusec-action@v0.1
+        with:
+          arguments: --config-file-path=horusec-config.json
