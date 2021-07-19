@@ -9,4 +9,4 @@ jobs:
         id: run_horusec
         run: |
                 curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/master/deployments/scripts/install.sh | bash -s latest
-                horusec scan -p ./
+                horusec start -p ./
